@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title_logueado %}Bienvenido a BIBLIOTECH{% endblock title_logueado %}</title>
+    <link rel="stylesheet" href="{% static 'css/base_principal.css' %}">
+    {% block extra_css_principal %}{% endblock extra_css_principal %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head_principal %}{% endblock head_principal%}
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+      <a href="{% url "pagina_principal" %}" class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-indigo-600">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          BIBLIOTECH
+      </a>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+          <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-menu">
+          <li class="nav-item">
+              <a href="{% url "perfil" %}" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+                  Perfil
+              </a>
+          </li>
+          <li class="nav-item">
+              <a href="{% url "listar_libros" %}" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+                  Libros
+              </a>
+          </li>
+          <li class="nav-item">
+              <a href="{% url "comentarios" %}" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+                  Comentarios
+              </a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+  
+  {% block contenido_principal %}
+  {% endblock contenido_principal %}
+    
+
+  
+    <script src="{% static 'js/base_principal.js' %}"></script>
+    {% block extra_js_principal %}{% endblock extra_js_principal %}
+</body>
+</html>

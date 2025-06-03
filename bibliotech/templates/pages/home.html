@@ -1,0 +1,211 @@
+{% extends "plantilla/base.html" %}
+{% load static %}
+{% block title %}Bienvenido a BIBLIOTECH{% endblock title %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock extra_css %}
+{% block contenido %}
+<!-- From Uiverse.io by reglobby --> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotech - Inicio</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background-color: #f0f0f0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .user-profile:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 15px rgba(52,152,219,0.3);
+        }
+
+        .user-profile svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .user-profile p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Biblio<span>Tech</span></div>
+        <nav class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#novedades">Novedades</a>
+            <a href="#contacto">Contacto</a>
+            <div class="user-profile" aria-label="Botón de Login" tabindex="0" role="button">
+                <a href="{% url 'login' %}">
+                    <div class="user-profile-inner">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g data-name="Layer 2" id="Layer_2">
+                                <path d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z"></path>
+                            </g>
+                        </svg>
+                        <p>Iniciar Sesión</p>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Bienvenido a tu Biblioteca Digital</h2>
+            <p>Explora miles de libros, artículos y recursos académicos en un solo lugar</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>📚 Catálogo Digital</h3>
+                <p>Accede a nuestra amplia colección de libros electrónicos y recursos digitales</p>
+            </div>
+            <div class="feature-card">
+                <h3>🕒 Acceso 24/7</h3>
+                <p>Disponible desde cualquier dispositivo en cualquier momento</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔍 Búsqueda Avanzada</h3>
+                <p>Encuentra exactamente lo que necesitas con nuestro sistema de búsqueda inteligente</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 BiblioTech - Todos los derechos reservados</p>
+        <div class="social-links" style="margin-top: 1rem;">
+            <a href="#" style="color: white; margin: 0 0.5rem;">Twitter</a>
+            <a href="#" style="color: white; margin: 0 0.5rem;">Facebook</a>
+            <a href="#" style="color: white; margin: 0 0.5rem;">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
+{% endblock contenido %}

@@ -1,0 +1,35 @@
+{% extends "plantilla/base_principal.html" %}
+{% load static %}
+{% block title_logueado %}Bienvenido a BIBLIOTECH{% endblock title_logueado %}
+{% block extra_css_principal %}
+<link rel="stylesheet" href="{% static 'css/pagina_principal.css' %}">
+{% endblock extra_css_principal %}
+{% block head_principal %}
+
+{% endblock head_principal %}
+{% block contenido_principal %}
+ <main class="welcome-container">
+        <div class="welcome-card">
+            <h1>Bienvenido a la Biblioteca</h1>
+            <p class="welcome-text">
+                El aplicativo web es una solución digital diseñada para transformar la manera en que
+                los colegios particulares de Huánuco accedan, gestionan y consumen contenido
+                bibliográfico. 
+            </p>
+            <div class="info-box">
+                <h2>La experiencia del usuario</h2>
+                <p>
+                    La experiencia del usuario es una de las principales prioridades de este aplicativo
+                    web. Se ha diseñado para ser intuitivo y fácil de usar, lo que permite a los
+                    usuarios navegar por el contenido bibliográfico de manera eficiente y efectiva.
+                </p>
+            </div>
+        </div>
+    </main>
+{% endblock contenido_principal %}
+
+{% block extra_js_principal %}
+<script>
+  
+</script>
+{% endblock extra_js_principal %}

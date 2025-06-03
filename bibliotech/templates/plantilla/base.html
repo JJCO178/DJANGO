@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BIBLIOTECH{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+    {% block head %}{% endblock head %}
+</head>
+<body>
+  {% block contenido %}
+  {% endblock contenido %}
+    
+
+  
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>

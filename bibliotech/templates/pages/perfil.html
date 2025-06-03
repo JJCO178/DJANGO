@@ -1,0 +1,97 @@
+{% extends "plantilla/base_principal.html" %}
+{% load static %}
+{% block title_logueado %}Perfil del Usuario{% endblock title_logueado %}
+{% block extra_css_principal %}
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+<script src="https://unpkg.com/lucide@latest"></script>
+{% endblock extra_css_principal %}
+{% block head_principal %}
+
+{% endblock head_principal %}
+
+{% block contenido_principal %}
+     <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header"></div>
+            <div class="profile-content">
+                <div class="profile-avatar">
+                    <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="Usuario" class="avatar-img">
+                </div>
+
+                <div class="profile-info">
+                    <h1>Información Personal</h1>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="label-with-icon">
+                                <i data-lucide="user"></i>
+                                <label>Nombres Completos</label>
+                            </div>
+                            <p>{{ user.first_name }}</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="label-with-icon">
+                                <i data-lucide="user"></i>
+                                <label>Apellidos</label>
+                            </div>
+                            <p>{{ user.last_name }}</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="label-with-icon">
+                            <i data-lucide="graduation-cap"></i>
+                            <label>Nivel Escolar</label>
+                        </div>
+                        <p>{{ perfil.nivel_escolar.nombre }}</p>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="label-with-icon">
+                            <i data-lucide="file-text"></i>
+                            <label>Biografía</label>
+                        </div>
+                        <p class="biography">
+                           {{ perfil.biografia }}
+                        </p>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="label-with-icon">
+                                <i data-lucide="mail"></i>
+                                <label>Correo Electrónico</label>
+                            </div>
+                            <p>{{ user.email }}</p>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="label-with-icon">
+                                <i data-lucide="phone"></i>
+                                <label>Teléfono</label>
+                            </div>
+                            <p>{{ perfil.telefono }}</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="label-with-icon">
+                            <i data-lucide="home"></i>
+                            <label>Domicilio</label>
+                        </div>
+                        <p>
+                            {{ perfil.direccion }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock contenido_principal %}
+
+{% block extra_js_principal %}
+<script>
+    lucide.createIcons();
+</script>
+{% endblock extra_js_principal %}
